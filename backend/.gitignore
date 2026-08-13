@@ -1,0 +1,27 @@
+# 1. Security & Secrets (Never commit these!)
+.env
+.env.local
+*.pem
+*.key
+
+node_modules
+
+# 2. Package Dependencies (Reproducible via package managers)
+node_modules/
+/vendor/
+.venv/
+venv/
+__pycache__/
+
+# 3. System & OS Files (User-specific noise)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 4. Build Output & Logs
+dist/
+build/
+out/
+*.log
+*.tmp
