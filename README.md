@@ -6,9 +6,9 @@ TaskFlow is a lightweight, full-stack Kanban-style task management board built f
 
 ## 🔗 Live Demo & Links
 
-* **Live Application:** [https://taskflow-frontend.vercel.app](https://taskflow-frontend.vercel.app)
-* **Backend API:** [https://taskflow-backend.onrender.com/api/board](https://taskflow-backend.onrender.com/api/board)
-* **GitHub Repository:** [https://github.com/YOUR_GITHUB_USERNAME/taskflow-app](https://github.com/YOUR_GITHUB_USERNAME/taskflow-app)
+* **Live Application:** [https://taskflow-app-ruby.vercel.app/](https://taskflow-app-ruby.vercel.app/)
+* **Backend API:** [https://taskflow-app-qgri.onrender.com/](https://taskflow-app-qgri.onrender.com/)
+* **GitHub Repository:** [https://github.com/ajaymaurya4527/taskflow-app](https://github.com/ajaymaurya4527/taskflow-app)
 
 ---
 
@@ -63,3 +63,57 @@ CREATE TABLE IF NOT EXISTS tasks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (column_id) REFERENCES columns(id) ON DELETE CASCADE
 );
+
+
+Step 1: Clone the Repository
+Open your terminal and run:
+
+Bash
+git clone [https://github.com/ajaymaurya4527/taskflow-app.git](https://github.com/ajaymaurya4527/taskflow-app.git)
+cd taskflow-app
+Step 2: Setup & Run Backend
+Navigate to the backend directory:
+
+Bash
+cd backend
+Install backend dependencies:
+
+Bash
+npm install
+Configure Environment Variables:
+Create a .env file in the backend folder:
+
+Code snippet
+PORT=5000
+NODE_ENV=development
+DB_PATH=./taskflow.db
+Seed the Database:
+Run the seed script to create tables and insert initial sample columns & tasks:
+
+Bash
+npm run seed
+Start the Express backend server:
+
+Bash
+npm run dev
+The backend server will run at http://localhost:5000
+
+Step 3: Setup & Run Frontend
+Open a new terminal window and navigate to the frontend directory:
+
+Bash
+cd taskflow-app/frontend
+Install frontend dependencies:
+
+Bash
+npm install
+Configure Environment Variables:
+Create a .env file in the frontend folder:
+
+Code snippet
+VITE_API_BASE_URL=http://localhost:5000/api
+Start the Vite React development server:
+
+Bash
+npm run dev
+The frontend application will open at http://localhost:3000
