@@ -11,8 +11,9 @@ export default function TaskBoard({ board, priorityFilter, onEdit, onDelete, onM
   }
 
   return (
-    <main className="p-6 overflow-x-auto">
-      <div className="flex gap-6 items-start justify-start min-w-max pb-4">
+    <main className="p-4 sm:p-6 w-full flex-1 flex flex-col">
+      {/* Mobile: Vertical | Desktop: Full-width equal columns */}
+      <div className="flex flex-col md:flex-row gap-6 items-stretch w-full flex-1">
         {board.columns.map((column) => (
           <Column
             key={column.id}

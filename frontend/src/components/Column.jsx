@@ -9,7 +9,8 @@ export default function Column({ column, columns, priorityFilter, onEdit, onDele
   });
 
   return (
-    <div className="bg-slate-100/70 p-4 rounded-2xl border border-slate-200/80 flex flex-col gap-4 min-w-[300px] w-full max-w-sm">
+    /* Mobile: Full Width (w-full) | Desktop: Equal Space Distribution (md:flex-1) */
+    <div className="bg-slate-100/70 p-4 rounded-2xl border border-slate-200/80 flex flex-col gap-4 w-full md:flex-1 md:min-w-[280px]">
       {/* Column Header */}
       <div className="flex justify-between items-center pb-2 border-b border-slate-200">
         <h3 className="font-bold text-slate-700 text-sm tracking-wide uppercase">{column.name}</h3>
@@ -19,9 +20,9 @@ export default function Column({ column, columns, priorityFilter, onEdit, onDele
       </div>
 
       {/* Task List */}
-      <div className="flex flex-col gap-3 min-h-[150px]">
+      <div className="flex flex-col gap-3 min-h-[150px] flex-1">
         {filteredTasks.length === 0 ? (
-          <div className="border-2 border-dashed border-slate-200 rounded-xl p-6 text-center text-xs text-slate-400">
+          <div className="border-2 border-dashed border-slate-200 rounded-xl p-6 text-center text-xs text-slate-400 flex-1 flex items-center justify-center">
             No tasks in this column
           </div>
         ) : (
